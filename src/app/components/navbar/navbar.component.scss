@@ -1,0 +1,42 @@
+nav{
+    margin-bottom: 2% !important;
+    filter: drop-shadow(0px 05px 10px #2525253a);
+
+  
+        ul{      
+            .dropdown-menu{
+                background-color: rgb(30, 8, 109);
+                --bs-dropdown-padding-x: 0;
+                --bs-dropdown-padding-y: 0;
+                border-radius: 0%;
+            }
+
+            li{
+                a{
+                    text-decoration-color: white;
+                    color: white !important;
+                    background-color: var(--bs-blue);
+                    
+
+              
+                }
+            }
+        }
+    
+}
+.navbar-toggler{
+    color: white;
+border-color: white;
+
+&:hover{
+    
+    border-color: white;
+}
+    
+}
+
+.navbar-toggler-icon{
+    
+    filter: brightness(100);
+
+}
