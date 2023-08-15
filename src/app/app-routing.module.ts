@@ -14,6 +14,7 @@ import { AtualizarServicoComponent } from './servicos/atualizar-servico/atualiza
 import { DeletarServicoComponent } from './servicos/deletar-servico/deletar-servico.component';
 import { ExibirServicoComponent } from './servicos/exibir-servico/exibir-servico.component';
 import { ListarServicosComponent } from './servicos/listar-servicos/listar-servicos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
 
@@ -37,14 +38,15 @@ const routes: Routes = [
   { path: 'ListarServicos', component: ListarServicosComponent },
   { path: 'ExibirServico', component: ExibirServicoComponent },
 
- { path: '', redirectTo: 'perfil', pathMatch: 'full' } //limpa a barra de endereco e rediceciona pra home // falta testar
+ //{ path: '', redirectTo: 'perfil', pathMatch: 'full' } //limpa a barra de endereco e rediceciona pra home // falta testar
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes), 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 ],
   exports: [RouterModule]
 })

@@ -1,8 +1,14 @@
 export interface Categoria {
-    categoriaEnum: CategoriaEnum;
-    nome: string;
-    descricao: string;
-    subcategorias: Subcategoria[];
+    idCategoria: string;
+    nomeCategoria: string;
+    descricaoCategoria: string;
+    subcategorias: SubCategoria[];
+}
+
+export interface SubCategoria {
+    idSubCategoria: string;
+    nomeSubcategoria: string;
+    descricaoSubcategoria: string;
 }
 
 export enum CategoriaEnum {
@@ -13,10 +19,4 @@ export enum CategoriaEnum {
     Vendas = 5,
     Barbearias = 6,
     Tudo = 7
-}
-
-export interface Subcategoria {
-    subCategoriaEnum: number;
-    nome: string;
-    descricao: string;
 }

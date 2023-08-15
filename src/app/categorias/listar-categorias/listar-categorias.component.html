@@ -1,1 +1,25 @@
-<h1>listar-categorias works!</h1>
+<div class="accordion" id="categoriasAccordion">
+    <ng-container *ngFor="let categoria of categorias; let i = index">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ i }}">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#collapse' + i" aria-expanded="true" [attr.aria-controls]="'collapse' + i">
+                    {{ categoria.nomeCategoria }}
+                </button>
+            </h2>
+            <div [id]="'collapse' + i" class="accordion-collapse collapse show" [attr.aria-labelledby]="'heading' + i"
+                data-bs-parent="#categoriasAccordion">
+                <div class="accordion-body">
+                  
+                        <div *ngFor="let subcategoria of categoria.subcategorias">
+                            {{ subcategoria.nomeSubcategoria }}
+                            <p>
+                                <strong>{{ subcategoria.descricaoSubcategoria }}</strong>
+                            </p>
+                        </div>
+                  
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

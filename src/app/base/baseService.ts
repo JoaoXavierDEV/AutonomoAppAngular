@@ -4,6 +4,7 @@ import { throwError } from 'rxjs';
 export abstract class BaseService {
 
     protected UrlServiceV1: string = "https://localhost:44383/api/v1/";
+    //protected UrlServiceV1: string = "http://192.168.0.5/api/v1/";
     //protected UrlServiceV1: string = "https://devioapi.azurewebsites.net/api/v1/";
 
     protected ObterHeaderFormData() {
@@ -27,7 +28,7 @@ export abstract class BaseService {
         return {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
-                //'Authorization': `Bearer ${this.obterTokenUsuario()}`
+                'Authorization': `Bearer ${this.obterTokenUsuario()}`
             })
         };
     }
@@ -42,6 +43,7 @@ export abstract class BaseService {
 
     protected obterTokenUsuario(): string {
         return localStorage.getItem('app.token')!;
+        //return "";
     }
 
     protected serviceError(error: Response | any) {

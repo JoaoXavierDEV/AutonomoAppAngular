@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Categoria } from 'src/app/models/categoria.model';
+import { Categoria, SubCategoria } from 'src/app/models/categoria.model';
 import { CategoriaService } from 'src/app/services/CategoriaService';
 
 @Component({
@@ -10,20 +10,21 @@ import { CategoriaService } from 'src/app/services/CategoriaService';
 export class ListarCategoriasComponent implements OnInit {
 
   public categorias: Categoria[] = [];
-  errorMessage: string = '';
+  errorMessage: string = "";
 
-  constructor(private categoriaService: CategoriaService) {  }
+  constructor(protected categoriaService: CategoriaService) { }
 
   ngOnInit(): void {
-    console.log("HUE");
-    this.categoriaService.obterTodos()
-      .subscribe(
-        categorias => this.categorias = categorias,
-        error => this.errorMessage = error
-      );
-    console.log(this.categorias);
-    
+    this.categoriaService.obterTodosCategoriasESubcategorias()
+      .subscribe({
+        next: (value) => { 
+          this.categorias = value; 
+          console.table(this.categorias); 
+        },
+        error: (err) => console.warn(err),
+      });
   }
-
-
 }
+
+
+
