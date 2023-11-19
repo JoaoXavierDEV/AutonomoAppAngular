@@ -3,8 +3,8 @@ import { throwError } from 'rxjs';
 
 export abstract class BaseService {
 
-    protected UrlServiceV1: string = "https://localhost:44383/api/v1/";
-    //protected UrlServiceV1: string = "http://192.168.0.5/api/v1/";
+    //protected UrlServiceV1: string = "https://localhost:44383/api/v1/"; //projeto no visual studio
+    protected UrlServiceV1: string = "http://192.168.0.5/api/v1/"; // api hospedadda no IIS
     //protected UrlServiceV1: string = "https://devioapi.azurewebsites.net/api/v1/";
 
     protected ObterHeaderFormData() {
