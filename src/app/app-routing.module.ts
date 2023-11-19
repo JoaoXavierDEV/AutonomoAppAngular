@@ -19,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
 
   // home ou dashboard
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent},
 
   // login
   { path: 'entrar', component: LoginComponent },
