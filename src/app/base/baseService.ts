@@ -4,14 +4,16 @@ import { throwError } from 'rxjs';
 export abstract class BaseService {
 
     //protected UrlServiceV1: string = "https://localhost:44383/api/v1/"; //projeto no visual studio
+    
     //protected UrlServiceV1: string = "http://192.168.0.4/api/v1/"; // api hospedadda no IIS
-    protected UrlServiceV1: string = "http://joaojfmx-001-site1.ctempurl.com/api/v1/"; // api hospedadda no IIS
+    protected UrlServiceV1: string = "https://joaojfmx-001-site1.ctempurl.com/api/v1/"; 
     //protected UrlServiceV1: string = "https://devioapi.azurewebsites.net/api/v1/";
 
     protected ObterHeaderFormData() {
         return {
             headers: new HttpHeaders({
-                'Content-Disposition': 'form-data; name="produto"',
+               // 'Content-Disposition': 'form-data; name="produto"',
+                'Content-Type': 'application/json',
                 'Authorization': `Bearer ${this.obterTokenUsuario()}`
             })
         };

@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'ListarServicos', component: ListarServicosComponent },
   { path: 'ExibirServico', component: ExibirServicoComponent },
 
- //{ path: '', redirectTo: 'perfil', pathMatch: 'full' } //limpa a barra de endereco e rediceciona pra home // falta testar
+ { path: '', redirectTo: '', pathMatch: 'full' } //limpa a barra de endereco e rediceciona pra home // falta testar
 ];
 
 @NgModule({
